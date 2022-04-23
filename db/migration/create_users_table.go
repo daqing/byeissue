@@ -1,10 +1,9 @@
 package migration
 
-import (
-	"github.com/daqing/byeissue/app/repo"
-	"github.com/daqing/byeissue/lib/orm"
-)
+import "github.com/daqing/byeissue/app/repo"
 
 func CreateUsersTable() {
-	orm.DB().AutoMigrate(&repo.UserTable{})
+	r := &repo.UserRepo{}
+
+	r.CreateTable()
 }

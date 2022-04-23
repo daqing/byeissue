@@ -4,7 +4,6 @@ import (
 	"net/http"
 
 	"github.com/daqing/byeissue/app/repo"
-	"github.com/daqing/byeissue/lib/orm"
 	"github.com/gin-gonic/gin"
 )
 
@@ -15,11 +14,9 @@ func main() {
 	r.Static("/static", "./app/static")
 
 	r.GET("/", func(c *gin.Context) {
-		var count int64
+		r := &repo.UserRepo{}
 
-		orm.DB().Model(&repo.UserTable{}).Count(&count)
-
-		c.HTML(http.StatusOK, "home/index.html", gin.H{"Name": "it works", "Users": count})
+		c.HTML(http.StatusOK, "home/index.html", gin.H{"Name": "it works", "Users": r.Total()})
 	})
 
 	r.Run(":2022")
