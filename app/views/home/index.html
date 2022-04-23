@@ -1,9 +1,12 @@
 {{ define "home/index.html" }}
     {{ template "layout/header" . }}
 
-    <p>Using home/index.tmpl</p>
-    <p style="color: red;">{{ .message }}</p>
-    <p id="test-js"></p>
+    <div class="font-bold underline container mx-auto">
+        <p>Using home/index.tmpl</p>
+        <p style="color: red;">{{ .message }}</p>
+        <p id="test-js"></p>   
+    </div>
+   
 
     <script src="/static/js/home.js"></script>
 
