@@ -10,15 +10,18 @@ import (
 
 func main() {
 	app := &cli.App{
-		Name:  "migrate",
-		Usage: "run database migrations",
-		Action: func(c *cli.Context) error {
-			migration.CreateUsersTable()
-			return nil
-		},
+		Name:   "migrate",
+		Usage:  "run database migrations",
+		Action: RunMigrations,
 	}
 
 	if err := app.Run(os.Args); err != nil {
 		log.Fatal(err)
 	}
+}
+
+func RunMigrations(c *cli.Context) error {
+	migration.CreateUsersTable()
+
+	return nil
 }
