@@ -4,5 +4,4 @@ tailwind:
 	npx tailwindcss -i ./app/assets/tailwind.css -o ./app/static/css/tailwind.css --watch
 
 run:
-	go build
-	./byeissue
+	go run ./main.go

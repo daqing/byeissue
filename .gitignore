@@ -1,3 +1,4 @@
 /byeissue
-node_modules
 /app/static/css/tailwind.css
+/bin
+node_modules
