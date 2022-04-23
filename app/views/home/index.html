@@ -1,16 +1,11 @@
 {{ define "home/index.html" }}
-<html>
-  <head>
-    <title>Byeissue</title>
-    <script src="/static/js/jquery.min.js"></script>
-  </head>
-  <body>
-    <h1>{{ .title }}</h1>
+    {{ template "layout/header" . }}
+
     <p>Using home/index.tmpl</p>
     <p style="color: red;">{{ .message }}</p>
     <p id="test-js"></p>
 
     <script src="/static/js/home.js"></script>
-  </body>
-</html>
+
+    {{ template "layout/footer" . }}
 {{ end }}
